@@ -16,24 +16,33 @@ const skill2 = {
     Level: "69"
 }
 
-var skillArray = [skill1, skill2];
-var parsedSkillArray = [];
+
 
 function parseSkill(skill) {
     var fixedSkill;
-    fixedSkill = '<tr>' + skill.Name + '</tr><tr>' + skill.Cost + '</tr><tr>' + skill.Effect + '</tr><tr>' + skill.Level + '</tr>';
-    parsedSkillArray.push(fixedSkill);
+    fixedSkill = '<tr><td>' + skill.Name + '</td><td>' + skill.Cost + '</td><td>' + skill.Effect + '</td><td>' + skill.Level + '</td></tr>';
+    return fixedSkill;
 }
 
 function prepareSkillArray(skillArray) {
     var i;
+    var parsedSkillArray = [];
     for (i = 0; i < skillArray.length; i++) {
-        console.log(i);
-        parseSkill(skillArray[i]);
+        parsedSkillArray.push(parseSkill(skillArray[i]))
     }
     parsedSkillArray = parsedSkillArray.join("");
+    console.log("parsed here" + parsedSkillArray);
 }
 
-var finalSkillArray = prepareSkillArray(skillArray);
 
-export { finalSkillArray };
+
+
+
+const finalSkillArray = function() {
+    console.log("test");
+    
+} 
+var skillArray = [skill1, skill2];
+var finalProduct = prepareSkillArray(skillArray);
+
+export {finalProduct};

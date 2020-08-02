@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {finalSkillArray} from './skill';
+import {finalProduct} from './skill';
 import makeMagatama from './Magatama';
 
 
@@ -15,8 +15,8 @@ function App() {
     const alignmentRef = useRef(null);
     const magatamaRef = useRef(null);
     const lightRef = useRef(null)
-    
-    const newMagatama = makeMagatama('Gaea', 'Dark', 'Heal/Strength +1/Vitality +1', '+10', '--','+10','--','--','-','-','-','Physical','Force/Expel/Death', finalSkillArray)
+    const newMagatama = makeMagatama('Gaea', 'Dark', 'Heal/Strength +1/Vitality +1', '+10', '--','+10','--','--','-','-','-','Physical','Force/Expel/Death', finalProduct)
+
 
     //do this for the toggleable data
     const toggleRef = useRef(null);
@@ -54,6 +54,7 @@ function App() {
         <div >
             <h2 onClick={() => {hideChildren(lightRef)}}>Light</h2>
             <div ref={lightRef}>
+                {newMagatama}
                 <h3>Magatama Name</h3>
                 <table>
                     <tr>
