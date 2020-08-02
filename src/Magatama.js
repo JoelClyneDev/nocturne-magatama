@@ -1,7 +1,12 @@
 import React from 'react';
+import ReactHtmlParser from 'react-html-parser'
+
+import './skill'
 import "./App.css"
 
-function Magatama({Name, Element, WildEffects, Strength, Magic, Vitality, Agility, Luck, Reflects, Absorbs, Void, Resists, Weak, Skills}){
+
+
+const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vitality, Agility, Luck, Reflects, Absorbs, Void, Resists, Weak, Skills){
     return(
         <div className="magatama">
             <h3>{Name}</h3>
@@ -18,9 +23,6 @@ function Magatama({Name, Element, WildEffects, Strength, Magic, Vitality, Agilit
                                     <td>{WildEffects}</td>
                                 </tr>
                             </table>
-                            
-                            
-                            <table></table>
                         </tr>
                         <tr>
                         <table>
@@ -30,6 +32,13 @@ function Magatama({Name, Element, WildEffects, Strength, Magic, Vitality, Agilit
                                 <td>Vt</td>
                                 <td>Ag</td>
                                 <td>Lu</td>
+                            </tr>
+                            <tr>
+                                <td>{Strength}</td>
+                                <td>{Magic}</td>
+                                <td>{Vitality}</td>
+                                <td>{Agility}</td>
+                                <td>{Luck}</td>
                             </tr>
                         </table>
                         </tr>
@@ -52,7 +61,16 @@ function Magatama({Name, Element, WildEffects, Strength, Magic, Vitality, Agilit
                         </table>
                         </tr>
                         <tr>
-                        
+                        <table>
+                            <tr>
+                                <td>Skill</td>
+                                <td>Cost</td>
+                                <td>Effect</td>
+                                <td>Level</td>
+                            </tr>
+                            <tr> { ReactHtmlParser (Skills)} </tr>
+
+                        </table>
                         </tr>
                     </tbody>
                     <tr>
@@ -67,4 +85,6 @@ function Magatama({Name, Element, WildEffects, Strength, Magic, Vitality, Agilit
                 </table>
         </div>
     )
-}
+}        
+
+export default makeMagatama;
