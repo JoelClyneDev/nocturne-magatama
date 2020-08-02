@@ -1,4 +1,4 @@
-import React, { useRef }   from 'react';
+import React, { useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -6,66 +6,74 @@ import './App.css';
 
 function App() {
 
-//stores the reference, it starts as null because nothing is in it
-const refContainer = useRef(null);
-//the current value of the ref is stored in refVarName.current
-console.log(refContainer.current);
-
-//do this for the toggleable data
-const toggleRef = useRef(null);
-
-//constant of a toggleable data attribute
-
-//temporary class of a collapseable attribute
-class dataAttribute{
-  constructor(id){
-    this.id = id;
-    this.toggler = false;
+    //stores the reference for each of the levels, it starts as null because nothing is in it
+    //the current value of the ref is stored in refVarName.current
+    //these will be toggleable to appear and dissapear
+    const alignmentRef = useRef(null);
+    const magatamaRef = useRef(null);
+    const lightRef = useRef(null)
     
-  }
 
-  getToggler() {
-    return this.toggler;
-  }
-  changeToggler() {
-    this.toggler = !this.toggler;
-  }
-  collapseAttr() {
-    if (this.toggler){
-      this.attr.style.display = "block";
-    } else {
-      this.attr.style.display = "none";
+    //do this for the toggleable data
+    const toggleRef = useRef(null);
+
+    /*For doing stuff to the toggle display reference (In this case the paragraph)
+    Have to say current to access the one I want */
+    function toggleParagraph() {
+        if (toggleRef.current.style.display !== "none") {
+            toggleRef.current.style.display = "none";
+        } else {
+            toggleRef.current.style.display = "block";
+        }
     }
-  }
-}
-/*For doing stuff to the toggle display reference (In this case the paragraph)
-Have to say current to access the one I want */
-function toggleParagraph() {
-  if (toggleRef.current.style.display != "none"){
-    toggleRef.current.style.display = "none";
-  } else {
-    toggleRef.current.style.display = "flex";
-  }
-}
 
-const dataAttr = new dataAttribute("dataToggle");
-//If i want to use a function  in the html part, i have to not use the parentheses or it will auto activate
+    function generateMagatamaRefs(magatamaArray){
+
+    }
+
+    function hideChildren(refName){
+        if (refName.current.style.display !== "none") {
+            refName.current.style.display = "none";
+        } else {
+            refName.current.style.display = "block";
+        }
+    }
+
+
+    //If i want to use a function  in the html part, i have to not use the parentheses or it will auto activate
 
     return ( 
-      <div>
-        <h1>Magatamas</h1>
-        <p>But what are they</p>
-        <div>
-          <h2>Light</h2>
-          {/*contains a reference to refcontainer which allows it to do stuff to it
-          Must use lambda for the function to work!*/}
-          <button ref={refContainer} onClick={() => {toggleParagraph()}}>collapse</button>
-          <div>
-            <p ref={toggleRef}>toggleable data</p>
-          </div>
-        </div>
-      </div>
-    );
+    
+    <div>
+        <h1>Magatamas </h1> 
+        <p> But what are they </p> 
+        <div >
+            <h2 onClick={() => {hideChildren(lightRef)}}>Light</h2>
+            <div ref={lightRef}>
+                <h3>Magatama Name</h3>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Effect</th>
+                    </tr>
+                    <tr>
+                        <td>Antehma</td>
+                        <td>Booo</td>
+                        <td>Not Today Beelzebub</td>
+                    </tr>
+                </table>
+                {/*contains a reference to refcontainer which allows it to do stuff to it
+                        Must use lambda for the function to work!*/}
+                <button > collapse </button> 
+                <div>
+                    <p ref = { toggleRef } > toggleable data </p> 
+                </div>
+            </div>
+            <h2 className="attribute">Neutral</h2>
+            <h2>Dark</h2>
+        </div> 
+    </div>
+);
 }
 
 export default App;
