@@ -5,6 +5,7 @@ mongoose
     .catch(e => {
         console.error('Connection error', e.message)
     })
+console.log("Connection Established!")
 
 const magatamaDB = mongoose.connection
 

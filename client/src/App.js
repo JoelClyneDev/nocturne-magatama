@@ -6,11 +6,14 @@ import makeMagatama from './Magatama';
 import runMongooseConnection from './mongoDBconnection';
 import mongoose from 'mongoose';
 import { render } from 'react-dom';
+import axios from 'axios'
+//import magatamaList from './generateMagatamas'
 
 
 
 
 function App() {
+
 
     
     //stores the reference for each of the levels, it starts as null because nothing is in it
@@ -22,7 +25,9 @@ function App() {
     const newMagatama = makeMagatama('Gaea', 'Dark', 'Heal/Strength +1/Vitality +1', '+10', '--','+10','--','--','-','-','-','Physical','Force/Expel/Death', finalProduct);
     const connection = runMongooseConnection;
     
-   
+    function getMagatamaData(){
+        axios.get('http://localhost:3000/api')
+    }
 
     //do this for the toggleable data
     const toggleRef = useRef(null);

@@ -31,7 +31,8 @@ function prepareSkillArray(skillArray) {
         parsedSkillArray.push(parseSkill(skillArray[i]))
     }
     parsedSkillArray = parsedSkillArray.join("");
-    console.log("parsed here" + parsedSkillArray);
+    //console.log("parsed here" + parsedSkillArray);
+    return parsedSkillArray;
 }
 
 
@@ -40,9 +41,10 @@ function prepareSkillArray(skillArray) {
 
 const finalSkillArray = function() {
     console.log("test");
-    
-} 
+
+}
 var skillArray = [skill1, skill2];
 var finalProduct = prepareSkillArray(skillArray);
+console.log("finalProduct " + finalProduct)
 
-export {finalProduct};
+export { finalProduct };

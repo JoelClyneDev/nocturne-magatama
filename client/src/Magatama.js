@@ -71,8 +71,9 @@ const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vital
                                             <td>Level</td>
                                         </tr>
                                         {ReactHtmlParser (Skills)}
-                                        {console.log(Skills)}
-                                        {ReactHtmlParser ("<tr><td>Deathbound</td><td>25% HP</td><td>Medium physical damage to random foes.</td><td>61</td></tr><tr><td>Avenge</td><td> Passive</td><td> 50% chance of countering any physical attack with heavy physical damage</td><td>69</td></tr>")}
+                                        {console.log("help me" + Skills)}
+                                        {//ReactHtmlParser ("<tr><td>Deathbound</td><td>25% HP</td><td>Medium physical damage to random foes.</td><td>61</td></tr><tr><td>Avenge</td><td> Passive</td><td> 50% chance of countering any physical attack with heavy physical damage</td><td>69</td></tr>")
+                                        }
                                     </tbody>
                                 </table>
                             </td>

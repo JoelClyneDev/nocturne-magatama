@@ -118,16 +118,19 @@ getMagatamaById = async(req, res) => {
 }
 
 getMagatamas = async(req, res) => {
-    await Magatama.find({}, (err, magatama) => {
+
+
+    await Magatama.find({}, (err, magatamas) => {
+
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
-        if (!magatama.length) {
+        if (!magatamas.length) {
             return res
                 .status(404)
-                .json({ success: false, error: `Magatama not found` })
+                .json({ success: false, error: `Magatama not found`, length: magatamas.length })
         }
-        return res.status(200).json({ success: true, data: magatama })
+        return res.status(200).json({ success: true, data: magatamas })
     }).catch(err => console.log(err))
 }
 

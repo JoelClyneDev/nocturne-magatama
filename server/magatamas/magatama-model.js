@@ -2,8 +2,9 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 //use the real magatama schema later
-const magatama = new Schema({
+const magatamaSchema = new Schema({
     name: { type: String, required: true },
+    element: { type: String, required: true },
     wild_effects: { type: String, required: true },
     //may change to number
     st: { type: String, required: true },
@@ -16,6 +17,7 @@ const magatama = new Schema({
     absorb: { type: String, required: true },
     void: { type: String, required: true },
     weak: { type: String, required: true },
+    resist: { type: String, required: true },
     //fix later, make own schema?
     skills: [{
         skill_name: { type: String, required: true },
@@ -23,4 +25,6 @@ const magatama = new Schema({
         effect: { type: String, required: true },
         level: { type: String, required: true }
     }]
-}, { timestamps: true }, )
+})
+
+module.exports = mongoose.model('LocalDark', magatamaSchema, 'LocalDark')
