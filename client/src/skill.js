@@ -38,7 +38,7 @@ function parseSkill(skill) {
 
 function parseSkillObject(skill) {
     var fixedSkill = null
-    fixedSkill = '<tr><td>' + skill.name + '<tr><td>' + skill.cost + '<tr><td>' + skill.effect + '<tr><td>' + skill.level
+    fixedSkill = '<tr><td>' + skill.name + '</td><td>' + skill.cost + '</td><td>' + skill.effect + '</td><td>' + skill.level + '</td></tr>';
     return fixedSkill
 }
 
@@ -58,7 +58,7 @@ function parseSkillObjectArray(skillArray) {
     skillArray.forEach(element => {
         parsedSkillArray.push(parseSkillObject(element))
     });
-    parsedSkillArray.join("")
+    parsedSkillArray = parsedSkillArray.join("")
     console.log("Maximum Parse " + parsedSkillArray)
     return parsedSkillArray
 

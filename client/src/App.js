@@ -48,7 +48,11 @@ function App() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [data, setData] = useState(null);
+    const alignmentRef = useRef(null);
+    const magatamaRef = useRef(null);
+    const lightRef = useRef(null)
     const [preparedMagatamaData, setPreparedMagatamaData] = useState(null)
+    const toggleRef = useRef(null);
 
     const loadData = useCallback(() => {
         async function makeRequest() {
@@ -129,19 +133,17 @@ function App() {
 
     
 
-    //const alignmentRef = useRef(null);
-    //const magatamaRef = useRef(null);
-    //const lightRef = useRef(null)
+    
     const newMagatama = makeMagatama('Gaadsfasdfsfea', 'Dark', 'Heal/Strength +1/Vitality +1', '+10', '--','+10','--','--','-','-','-','Physical','Force/Expel/Death', finalProduct);
     console.log("New Magatama Below")
     console.log(newMagatama)
     //const connection = runMongooseConnection;  
     //do this for the toggleable data
-    //const toggleRef = useRef(null);
+    
 
     /*For doing stuff to the toggle display reference (In this case the paragraph)
     Have to say current to access the one I want */
-    /*
+    
     function toggleParagraph() {
         if (toggleRef.current.style.display !== "none") {
             toggleRef.current.style.display = "none";
@@ -149,7 +151,7 @@ function App() {
             toggleRef.current.style.display = "block";
         }
     }
-    */
+    
 
     function hideChildren(refName){
         if (refName.current.style.display !== "none") {
@@ -159,7 +161,6 @@ function App() {
         }
     }
 
-
     //If i want to use a function  in the html part, i have to not use the parentheses or it will auto activate  
     return ( 
     
@@ -167,11 +168,12 @@ function App() {
     <div>
         <h1 >Magatamas </h1> 
         <p> But what are they </p> 
-        {tempMagatamaArray[0]}
+        
         <div >
-            <h2 onClick={() => {/*hideChildren(lightRef)*/}}>Light</h2>
-            <div /*ref={lightRef}*/>
+            <h2 onClick={() => {hideChildren(lightRef)}}>Light</h2>
+            <div ref={lightRef}>
                 {newMagatama}
+                {tempMagatamaArray[0]}
                 <h3>Magatama Name</h3>
                 <table>
                     <tbody>
