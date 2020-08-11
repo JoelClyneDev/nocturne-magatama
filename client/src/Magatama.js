@@ -7,6 +7,7 @@ import "./App.css"
 
 
 const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vitality, Agility, Luck, Reflects, Absorbs, Void, Resists, Weak, Skills){
+    console.log(Name + " one more go")
     return(
         <div className="magatama">
             <h3>{Name}</h3>

@@ -14,13 +14,19 @@ const magatamaModel = require('./magatamas/magatama-model')
 const skillModel = require('./magatamas/skill-model')
 const magatamaCtrl = require('./controllers/magatama-ctrl')
 
+
+
 mongoose
     .connect(mongoDBUrl, { useUnifiedTopology: true, useNewUrlParser: true })
     .catch(e => {
         console.error('Connection error', e.message)
     })
 
+
 const connection = mongoose.connection;
+
+app.use(bodyParser.json())
+app.use(cors())
 
 connection.once("open", function() {
     console.log("MongoDB database connection established successfully");
@@ -32,8 +38,8 @@ app.use('/help', magatamaCtrl.getMagatamas)
 app.get('/test', (req, res) => {
     res.send('Hello World! 2')
 })
-app.use(cors())
-app.use(bodyParser.json())
+
+
 
 app.listen(port, function() {
     console.log("Server is running on Port: " + port);
