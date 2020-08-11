@@ -9,6 +9,8 @@ import { render } from 'react-dom';
 import axios from 'axios'
 import apis from './api/api_index'
 import { useCallback } from 'react';
+import { renderToString } from 'react-dom/server'
+import ReactHtmlParser from 'react-html-parser'
 //import magatamaList from './generateMagatamas'
 
 
@@ -143,6 +145,11 @@ function App() {
 
     /*For doing stuff to the toggle display reference (In this case the paragraph)
     Have to say current to access the one I want */
+    function addMagatamaArrayToHTML(magatamaArray){
+        var compiledMagatamas = ""
+        magatamaArray.forEach(element => compiledMagatamas = compiledMagatamas + renderToString(element))
+        return compiledMagatamas
+    }
     
     function toggleParagraph() {
         if (toggleRef.current.style.display !== "none") {
@@ -161,6 +168,8 @@ function App() {
         }
     }
 
+    const finalMagatamas = ReactHtmlParser(addMagatamaArrayToHTML(tempMagatamaArray))
+
     //If i want to use a function  in the html part, i have to not use the parentheses or it will auto activate  
     return ( 
     
@@ -173,7 +182,7 @@ function App() {
             <h2 onClick={() => {hideChildren(lightRef)}}>Light</h2>
             <div ref={lightRef}>
                 {newMagatama}
-                {tempMagatamaArray[0]}
+                {finalMagatamas}
                 <h3>Magatama Name</h3>
                 <table>
                     <tbody>
