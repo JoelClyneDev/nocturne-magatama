@@ -27,4 +27,4 @@ const magatamaSchema = new Schema({
     }]
 })
 
-module.exports = mongoose.model('LocalDark', magatamaSchema, 'LocalDark')
+module.exports = mongoose.model('smtWiki', magatamaSchema, 'smtWiki')

@@ -32,6 +32,8 @@ connection.once("open", function() {
     console.log("MongoDB database connection established successfully");
 });
 
+app.get('/', magatamaRouter)
+
 app.use('/api', magatamaRouter)
 app.use('/test', magatamaRouter)
 app.use('/help', magatamaCtrl.getMagatamas)
@@ -45,11 +47,12 @@ app.listen(port, function() {
     console.log("Server is running on Port: " + port);
 });
 
-
+/*
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
 
+*/
 
 
 /*
