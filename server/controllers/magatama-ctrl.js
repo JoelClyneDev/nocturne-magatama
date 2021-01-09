@@ -117,9 +117,10 @@ getMagatamaById = async(req, res) => {
     }).catch(err => console.log(err))
 }
 
+/*
+ **Gets the json response from the database
+ */
 getMagatamas = async(req, res) => {
-
-
     await Magatama.find({}, (err, magatamas) => {
 
         if (err) {

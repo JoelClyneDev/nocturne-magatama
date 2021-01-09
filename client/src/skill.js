@@ -1,5 +1,3 @@
-import React from 'react';
-import ReactHtmlParser from 'react-html-parser'
 import "./App.css"
 
 const skill1 = {
