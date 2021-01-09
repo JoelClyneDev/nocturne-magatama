@@ -1,10 +1,11 @@
-import React, { useRef, Component, useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import './App.css';
-import {finalProduct, prepareSkillArray, generateSkill, parseSkillObjectArray} from './skill';
+import {generateSkill, parseSkillObjectArray} from './skill';
 import makeMagatama from './Magatama';
 import { useCallback } from 'react';
 import { renderToString } from 'react-dom/server'
 import ReactHtmlParser from 'react-html-parser'
+import { render } from 'react-dom';
 //import magatamaList from './generateMagatamas'
 
 
@@ -115,14 +116,39 @@ function App() {
 
     //If i want to use a function  in the html part, i have to not use the parentheses or it will auto activate  
     //the full react code of the page
+
+
+    const MainPage = {
+        backgroundColor: "#800097",
+        color: "#C3073F",
+        overflow: "hidden"
+    }
+
+    const Introduction = {
+        maxWidth: "1140px",
+        margin: "auto",
+        textAlign: "center",
+        backgroundColor: "#1A1A1D",
+        overflow: "hidden"
+    }
+
+    const readingContent = {
+        maxWidth: "1140px", 
+        alignItems: "center",
+        margin: "auto",
+        backgroundColor: "#1A1A1D",
+        overflow: "hidden"
+    }
+    
+
     return ( 
-    <div>
-        <div>
+    <div style={MainPage}>
+        <div style={Introduction}>
             <h1>Magatamas</h1>
             <h2>Shin Megami Tensei III: Nocturne (PS2 / HD Remake)</h2> 
+            <p>Magatamas are the primary equip item of SMT III: Nocturne. They give demi-fiend stat boosts, new skills, and resistences.</p>
         </div>
-        <p>Magatamas are the primary equip item of SMT III: Nocturne. They give demi-fiend stat boosts, new skills, and resistences.</p> 
-        <div>
+        <div style={readingContent}>
             {finalMagatamas}
         </div> 
     </div>

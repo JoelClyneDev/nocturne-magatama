@@ -32,7 +32,7 @@ connection.once("open", function() {
     console.log("MongoDB database connection established successfully");
 });
 
-app.get('/', magatamaRouter)
+app.get('/', magatamaCtrl.getMagatamas)
 
 app.use('/api', magatamaRouter)
 app.use('/test', magatamaRouter)
@@ -46,34 +46,3 @@ app.get('/test', (req, res) => {
 app.listen(port, function() {
     console.log("Server is running on Port: " + port);
 });
-
-/*
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
-*/
-
-
-/*
-
-magatamaRouter.route("/Magatamas").get(function(req, res) {
-    magatamaCtrl.getMagatamas({}, function(err, result) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
-
-router.route("/fetch").get(function(req, res) {
-    magatamaSchema.find({}, function(err, result) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.send(result);
-        }
-    });
-});
-*/

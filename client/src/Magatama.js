@@ -3,6 +3,7 @@ import ReactHtmlParser from 'react-html-parser'
 
 import './skill'
 import "./App.css"
+import './Magatama.css'
 
 
 /*
@@ -10,28 +11,48 @@ import "./App.css"
 **The skills are taken in as an array of strings and converted to react code using ReactHtmlParser
 **Returns the react html code of a magatama
 */
+
+const magatamaTableStyle = {
+    marginLeft: "auto", 
+    marginRight: "auto",
+    borderCollapse: "collapse"
+}
+
+const topTableStyle = {
+    marginLeft: "auto", 
+    marginRight: "auto",
+    borderCollapse: "collapse"
+}
+
 const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vitality, Agility, Luck, Reflects, Absorbs, Void, Resists, Weak, Skills){
     console.log(Name + " one more go")
     return(
-        <div className="magatama">
-            <h3>{Name}</h3>
-                <table>
+        <div className="magatama" style={{textAlign: "center"}}>
+            <h3 style={{borderBottom: "1px solid white"}}>{Name}</h3>
+                <table style={topTableStyle}>
                     <tbody>
                         <tr>
-                            <td>
-                                <table>
+                            <td style={{border: "0px white"}}>
+                                <table style={magatamaTableStyle}>
                                     <tbody>
                                     <tr>
                                         <th>Element</th>
                                         <th>Wild Effects</th>
+                                        
                                     </tr>
                                     <tr>
                                         <td>{Element}</td>
-                                        <td>{WildEffects}</td>
+                                        <td>{WildEffects}</td>    
+                                    </tr>
+                                    <tr>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
                                     </tr>
                                     </tbody>
                                 </table>
-                                <table>
+                                <table style={magatamaTableStyle}>
                                     <tbody>
                                         <tr>
                                             <td>St</td>
@@ -49,7 +70,7 @@ const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vital
                                         </tr>
                                     </tbody>
                                 </table>
-                                <table>
+                                <table style={magatamaTableStyle}>
                                     <tbody>
                                         <tr>
                                             <th>Relfects</th>
@@ -67,7 +88,7 @@ const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vital
                                         </tr>
                                     </tbody>
                                 </table>
-                                <table>
+                                <table style={magatamaTableStyle}>
                                     <tbody>
                                         <tr>
                                             <td>Skill</td>
