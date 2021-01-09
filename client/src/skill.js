@@ -36,6 +36,9 @@ function parseSkill(skill) {
     return fixedSkill;
 }
 
+/*
+ **Takes a skill and returns it as a string which represents it's html code
+ */
 function parseSkillObject(skill) {
     var fixedSkill = null
     fixedSkill = '<tr><td>' + skill.name + '</td><td>' + skill.cost + '</td><td>' + skill.effect + '</td><td>' + skill.level + '</td></tr>';
@@ -53,6 +56,9 @@ function prepareSkillArray(skillArray) {
     return parsedSkillArray;
 }
 
+/*
+ **Takes an array of skills and returns them as an array of strings which represents their react html code
+ */
 function parseSkillObjectArray(skillArray) {
     var parsedSkillArray = [];
     skillArray.forEach(element => {

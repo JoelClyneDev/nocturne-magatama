@@ -5,7 +5,11 @@ import './skill'
 import "./App.css"
 
 
-
+/*
+**The shell of a magatama in react html code
+**The skills are taken in as an array of strings and converted to react code using ReactHtmlParser
+**Returns the react html code of a magatama
+*/
 const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vitality, Agility, Luck, Reflects, Absorbs, Void, Resists, Weak, Skills){
     console.log(Name + " one more go")
     return(
@@ -72,24 +76,13 @@ const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vital
                                             <td>Level</td>
                                         </tr>
                                         {ReactHtmlParser (Skills)}
-                                        {console.log("help me" + Skills)}
-                                        {//ReactHtmlParser ("<tr><td>Deathbound</td><td>25% HP</td><td>Medium physical damage to random foes.</td><td>61</td></tr><tr><td>Avenge</td><td> Passive</td><td> 50% chance of countering any physical attack with heavy physical damage</td><td>69</td></tr>")
-                                        }
                                     </tbody>
                                 </table>
                             </td>
                         </tr>
                         <tr>
-                        <th>Name</th>
-                        <th>Effect</th>
-                    </tr>
-                    <tr>
-                        <td>Antehma</td>
-                        <td>Booo</td>
-                        <td>Not Today Beelzebub</td>
                     </tr>
                     </tbody>
-                    
                 </table>
         </div>
     )
