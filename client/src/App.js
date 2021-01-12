@@ -5,6 +5,7 @@ import makeMagatama from './Magatama';
 import { useCallback } from 'react';
 import { renderToString } from 'react-dom/server'
 import ReactHtmlParser from 'react-html-parser'
+import bg from './images/smt_bg3.png'
 import { render } from 'react-dom';
 //import magatamaList from './generateMagatamas'
 
@@ -119,27 +120,34 @@ function App() {
 
 
     const MainPage = {
-        backgroundColor: "#800097",
-        color: "#C3073F",
-        overflow: "hidden"
+        
+        color: "#C3074F",
+        overflow: "hidden",
+        backgroundImage: `url(${bg})`,
+        backgroundRepeat: "repeat",
+        backgroundPosition: "center",
+        
     }
 
     const Introduction = {
         maxWidth: "1140px",
         margin: "auto",
         textAlign: "center",
-        backgroundColor: "#1A1A1D",
-        overflow: "hidden"
+        backgroundColor: "#131313",
+        overflow: "hidden",
+        color: "#C40000"
     }
 
     const readingContent = {
         maxWidth: "1140px", 
         alignItems: "center",
         margin: "auto",
-        backgroundColor: "#1A1A1D",
+        backgroundColor: "#131313",
         overflow: "hidden"
+
     }
-    
+
+
 
     return ( 
     <div style={MainPage}>
