@@ -4,6 +4,8 @@ import ReactHtmlParser from 'react-html-parser'
 import './skill'
 import "./App.css"
 import './Magatama.css'
+import './fonts/timesnewarial.ttf'
+import './fonts/KarlaRegular.ttf'
 
 
 /*
@@ -16,7 +18,10 @@ const magatamaTableStyle = {
     marginLeft: "auto", 
     marginRight: "auto",
     borderCollapse: "collapse",
-    color: "#FFFFFF"
+    color: "#FFFFFF",
+    maxWidth: "1100px"/*,
+    fontFamily: "KarlaRegular"*/
+
 }
 
 const topTableStyle = {
@@ -32,7 +37,15 @@ const nameHeader = {
     alignItems: "center",
     marginLeft: "auto",
     marginRight: "auto",
+    fontFamily: "Cinzel",
+    fontWeight: "400",
+    fontSize: "30px"
+}
+
+const magatamaTableDivPadding = {
     paddingBottom: "7px",
+    paddingLeft: "7px",
+    paddingRight: "7px",
 }
 
 const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vitality, Agility, Luck, Reflects, Absorbs, Void, Resists, Weak, Skills){
@@ -46,65 +59,70 @@ const makeMagatama = function(Name, Element, WildEffects, Strength, Magic, Vital
                 <tbody>
                     <tr>
                         <td style={{border: "0px white"}}>
-                        <table style={magatamaTableStyle}>
-                                <tbody>
-                                    <tr>
-                                        <th>Relfects</th>
-                                        <th>Absorbs</th>
-                                        <th>Void</th>
-                                        <th>Resists</th>
-                                        <th>Weak</th>
-                                    </tr>
-                                    <tr>
-                                        <td>{Reflects}</td>
-                                        <td>{Absorbs}</td>
-                                        <td>{Void}</td>
-                                        <td>{Resists}</td>
-                                        <td>{Weak}</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div style={magatamaTableDivPadding}>
                             <table style={magatamaTableStyle}>
-                                <tbody>
-                                <tr>
-                                    <th>Element</th>
-                                    <th>Wild Effects</th>
-                                    <th>St</th>
-                                    <th>Ma</th>
-                                    <th>Vt</th>
-                                    <th>Ag</th>
-                                    <th>Lu</th>
-                                    
-                                </tr>
-                                <tr>
-                                    <td>{Element}</td>
-                                    <td>{WildEffects}</td>
-                                    <td>{Strength}</td>
-                                    <td>{Magic}</td>
-                                    <td>{Vitality}</td>
-                                    <td>{Agility}</td>
-                                    <td>{Luck}</td>    
-                                </tr>
-                                <tr>
-                                    
-                                </tr>
-                                <tr>
-                                    
-                                </tr>
-                                </tbody>
-                            </table>
-                            
-                            <table style={magatamaTableStyle}>
-                                <tbody>
+                                    <tbody>
+                                        <tr style={{fontWeight: "bolder"}}>
+                                            <th>Relfects</th>
+                                            <th>Absorbs</th>
+                                            <th>Void</th>
+                                            <th>Resists</th>
+                                            <th>Weak</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{Reflects}</td>
+                                            <td>{Absorbs}</td>
+                                            <td>{Void}</td>
+                                            <td>{Resists}</td>
+                                            <td>{Weak}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style={magatamaTableDivPadding}>
+                                <table style={magatamaTableStyle}>
+                                    <tbody>
                                     <tr>
-                                        <td>Skill</td>
-                                        <td>Cost</td>
-                                        <td>Effect</td>
-                                        <td>Level</td>
+                                        <th>Element</th>
+                                        <th>Wild Effects</th>
+                                        <th>St</th>
+                                        <th>Ma</th>
+                                        <th>Vt</th>
+                                        <th>Ag</th>
+                                        <th>Lu</th>
+                                        
                                     </tr>
-                                    {ReactHtmlParser (Skills)}
-                                </tbody>
-                            </table>
+                                    <tr>
+                                        <td>{Element}</td>
+                                        <td>{WildEffects}</td>
+                                        <td>{Strength}</td>
+                                        <td>{Magic}</td>
+                                        <td>{Vitality}</td>
+                                        <td>{Agility}</td>
+                                        <td>{Luck}</td>    
+                                    </tr>
+                                    <tr>
+                                        
+                                    </tr>
+                                    <tr>
+                                        
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div style={magatamaTableDivPadding}>
+                                <table style={magatamaTableStyle}>
+                                    <tbody>
+                                        <tr>
+                                            <th>Skill</th>
+                                            <th>Cost</th>
+                                            <th>Effect</th>
+                                            <th>Level</th>
+                                        </tr>
+                                        {ReactHtmlParser (Skills)}
+                                    </tbody>
+                                </table>
+                            </div>
                         </td>
                     </tr>
                     <tr>

@@ -6,6 +6,9 @@ import { useCallback } from 'react';
 import { renderToString } from 'react-dom/server'
 import ReactHtmlParser from 'react-html-parser'
 import bg from './images/smt_bg3.png'
+import './fonts/timesnewarial.ttf'
+import './fonts/KarlaRegular.ttf'
+import logo from './images/smt3LogoV2.png'
 import { render } from 'react-dom';
 //import magatamaList from './generateMagatamas'
 
@@ -147,18 +150,51 @@ function App() {
 
     }
 
+    const titleStyle = {
+        fontFamily: "Cinzel", 
+        fontSize: "50px",
+        fontWeight: "700",
+        marginBottom: "0px",
+        marginTop: "10px"
+    }
+
+    const imageStyle = { 
+        width: "95%",
+        height: "auto", 
+        maxWidth: "637px",
+        alignItems: "center",
+        margin: "auto",
+        paddingTop: "40px",
+        objectFit: "contain"
+    }
+
+    const credits = {
+        fontFamily: "Arial", 
+        fontSize: "15px",
+        margin: "auto",
+        textAlign: "center",
+        paddingTop: "40px",
+        color: "#c40000",
+        paddingBottom: "20px"
+    }
+
+
 
 
     return ( 
     <div style={MainPage}>
         <div style={Introduction}>
-            <h1>Magatamas</h1>
-            <h2>Shin Megami Tensei III: Nocturne (PS2 / HD Remake)</h2> 
-            <p>Magatamas are the primary equip item of SMT III: Nocturne. They give demi-fiend stat boosts, new skills, and resistences.</p>
+            <img src={logo} style={imageStyle}/> 
+            <h1 style={titleStyle}>Magatamas</h1>
         </div>
         <div style={readingContent}>
             {finalMagatamas}
+            <div style={credits}>
+                <a>The information for this website was scraped from pages linked from the smt wiki  </a>
+                <a href=" https://megamitensei.fandom.com/wiki/Magatama">here</a>
+            </div>
         </div> 
+        
     </div>
 );
 }
