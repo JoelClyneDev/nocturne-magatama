@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'React';
 import App from './App';
-import ReactDOM from 'react-dom';
-import * as serviceWorker from './serviceWorker';
+import ReactDOM from 'React-Dom';
+import * as serviceWorker from './ServiceWorker';
 
 ReactDOM.hydrate( 
     <React.StrictMode>
