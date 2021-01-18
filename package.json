@@ -9,8 +9,7 @@
         "install-client": "cd client && npm install",
         "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
         "start-server": "cd server && nodemon index.js",
-        "start-client": "cd client && react-scripts start",
-        "heroku-postbuild": "cd client && npm run deploy"
+        "start-client": "cd client && react-scripts start"
     },
     "keywords": [],
     "author": "",
