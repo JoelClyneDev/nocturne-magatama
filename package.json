@@ -8,7 +8,7 @@
         "build": "concurrently \"npm run start-client\" \"npm run start-server\"",
         "install-client": "cd client && npm install",
         "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
-        "start-server": "cd server && nodemon index.js",
+        "start-server": "cd server && react-scripts build",
         "start-client": "cd client && react-scripts build"
     },
     "keywords": [],
