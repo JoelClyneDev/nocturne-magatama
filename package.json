@@ -5,11 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "concurrently \"npm run start-client\" \"npm run start-server\"",
+        "build": "cd client && npm run build",
         "install-client": "cd client && npm install",
-        "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
-        "start-server": "cd server && react-scripts build",
-        "start-client": "cd client && react-scripts build"
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "start": "cd client && nodemon index.js",
+        "client": "cd client && npm start"
     },
     "keywords": [],
     "author": "",
