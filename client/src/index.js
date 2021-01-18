@@ -1,6 +1,6 @@
-import React from 'React';
+import React from 'react';
 import App from './App';
-import ReactDOM from 'React-Dom';
+import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.hydrate( 
