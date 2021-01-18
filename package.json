@@ -5,11 +5,11 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "cd client && npm run build",
+        "build": "concurrently \"npm run start-client\" \"npm run start-server\"",
         "install-client": "cd client && npm install",
         "start": "concurrently \"npm run start-client\" \"npm run start-server\"",
         "start-server": "cd server && nodemon index.js",
-        "start-client": "cd client && react-scripts start"
+        "start-client": "cd client && react-scripts build"
     },
     "keywords": [],
     "author": "",
