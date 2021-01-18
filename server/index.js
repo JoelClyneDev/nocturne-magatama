@@ -6,8 +6,8 @@ const express = require("express");
 const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors')
-var port = 4000;
-var mongoDBUrl = 'mongodb://127.0.0.1:27017/Magatamas'
+var port = process.env.PORT || 4000;
+var mongoDBUrl = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Magatamas'
 const router = express.Router();
 const magatamaRouter = require('./route/magatama-router')
 const magatamaModel = require('./magatamas/magatama-model')
@@ -41,7 +41,9 @@ app.get('/test', (req, res) => {
     res.send('Hello World! 2')
 })
 
-
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'))
+}
 
 app.listen(port, function() {
     console.log("Server is running on Port: " + port);
